@@ -1,0 +1,59 @@
+// Use sparingly so we don't diverge too much.
+
+// This was added so ref link taps don't show underline. Move upstream later if possible.
+a:hover {
+    text-decoration: none !important;
+}
+
+a{
+    color: #3366CC;
+}
+
+.content {
+    font-family: -apple-system, HelveticaNeue;
+    font-size: 16px;
+}
+
+/*
+  Ensure things which are too wide for the screen can be scrolled sideways and don't
+  cause the web view to extend wider than the device width.
+*/
+.content_block, .image_overflow_x_container {
+    clear:both;
+    overflow-x: auto;
+    font-size: 16px;
+}
+
+// Override top padding on first edit pencil so it roughly aligns with first 2 lines of text.
+#edit_section_button_0{
+    margin-top:6px;
+}
+
+// Section heading font name (but not size)
+.section_heading {
+    font-family:"Georgia";
+}
+
+// Title heading size & padding
+#section_heading_and_content_block_0 h1 {
+    font-size:27px;
+    line-height:33px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+// Wikidata description styling
+#entity_description {
+    &:extend(.content);
+    font-size: 14px;
+    color: #666666;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*
+ Hide the Safari "Add to reading list" menu on long-press on links and other elements.
+*/
+* {
+    -webkit-touch-callout: none !important;
+}

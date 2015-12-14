@@ -1,0 +1,19 @@
+//
+//  WikipediaUnitTests-Prefix.pch
+//  Wikipedia
+//
+//  Created by Brian Gerstle on 6/19/15.
+//  Copyright (c) 2015 Wikimedia Foundation. All rights reserved.
+//
+
+#ifndef Wikipedia_WikipediaUnitTests_Prefix_pch
+#define Wikipedia_WikipediaUnitTests_Prefix_pch
+
+@import XCTest;
+#import "Global.h"
+#import "WMFTestFixtureUtilities.h"
+#import "MWKTitle+Random.h"
+#import "MWKSite+Random.h"
+#import "NSUserDefaults+WMFBatchRecordMode.h"
+
+#endif

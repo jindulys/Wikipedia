@@ -1,0 +1,183 @@
+# Customise this file, documentation can be found here:
+# https://github.com/KrauseFx/fastlane/tree/master/docs
+# vi: ft=ruby
+
+$:.unshift File.dirname(__FILE__)
+require 'lib/utils.rb'
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+     ENV['DELIVER_WHAT_TO_TEST'] = git_commit_log
+     # Set project for commit_version_bump, which seems to get confused by projects in other folders
+     ENV['FL_BUILD_NUMBER_PROJECT'] = "Wikipedia.xcodeproj"
+     ensure_git_status_clean unless ENV['FL_NO_ENSURE_CLEAN']
+  end
+
+  desc "Runs linting (and eventually static analysis)"
+  lane :analyze do
+    make 'lint' unless test_disabled?
+  end
+
+  desc "Runs unit tests, optionally generating a JUnit report."
+  lane :verify do |options|
+    opts = {
+      :scheme =>  options[:scheme] || 'Wikipedia',
+      :workspace => 'Wikipedia.xcworkspace',
+      :configuration => 'Debug',
+      :destination => "platform=iOS Simulator,name=iPhone 6,OS=#{options[:sim_os] || '9.1'}",
+      :destination_timeout => 240, # Increase timeout for Travis builds
+      :xcpretty_output => 'simple',
+      :buildlog_path => './build',
+      :enable_code_coverage => true
+    }
+    opts[:reports] = [{ :report => 'junit', :output => 'build/reports/unit-tests.xml' }] if options[:junit]
+    xctest(opts)
+  end
+
+  desc "Increment the app's build number and commit the changes."
+  lane :bump do |options|
+    opt_build_num = options[:build_number] || ENV['BUILD_NUMBER']
+    if opt_build_num then
+      increment_build_number(build_number: opt_build_num.to_i)
+    else
+      increment_build_number
+    end
+    commit_version_bump
+    add_git_tag(tag: "#{get_version_number}.#{get_build_number}")
+  end
+
+  desc "Submit a new **Wikipedia Alpha** Build to Apple TestFlight"
+  lane :alpha do
+    sigh(
+      adhoc: false,
+      force: true
+    )
+
+    gym(
+      configuration: "Alpha",
+      scheme: "Wikipedia Alpha"
+    )
+
+    changelog = git_commit_log
+
+    hockey(
+      notes: changelog,
+      notify: '0', # Means do not notify
+      status: '1', # Means do not make available for download
+    )
+
+    # Note: skipping submission means that the changelog isn't added
+    # This isn't a beta, so we can't submit to external testers
+    pilot(skip_submission: true)
+  end
+
+  desc "Submit a new **Wikipedia Beta** build to Apple TestFlight"
+  lane :beta do
+    sigh(
+      adhoc: false,
+      force: true,
+      filename: 'build/beta.mobileprovision'
+    )
+    ipa(
+      configuration: "Beta",
+      scheme: "Wikipedia Beta",
+      embed: 'build/beta.mobileprovision',
+    )
+    hockey(
+      notes: git_commit_log,
+      notify: '0', # Means do not notify
+      status: '1', # Means do not make available for download
+    )
+    pilot(skip_submission: false, changelog: git_commit_log)
+  end
+
+  desc "Upload a developer build to Hockey."
+  lane :dev do
+    sigh(
+      adhoc: true,
+      # Fastlane has issues forcing AdHoc profiles
+      force: false
+    )
+
+    # force iTunes file sharing to be enabled (normally disabled for release builds)
+    ENV['WMF_FORCE_ITUNES_FILE_SHARING'] = '1'
+    # force debug menu to be shown
+    ENV['WMF_FORCE_DEBUG_MENU'] = '1'
+
+    gym(
+      configuration: "AdHoc",
+      scheme: "Wikipedia AdHoc",
+      # both of these flags are required for ad hoc
+      export_method: 'ad-hoc',
+      use_legacy_build_api: true
+    )
+
+    hockey(
+      notes: git_commit_log,
+      notify: '2', # Notify all testers
+      status: '2', # Make available for download
+      release_type: '2' # 'alpha' release type
+    )
+  end
+
+
+  desc "Upload AdHoc \"Release Candidate\" build to Hockey."
+  lane :rc do
+    sigh(
+      adhoc: true,
+      # Fastlane has issues forcing AdHoc profiles
+      force: false
+    )
+
+    # force iTunes file sharing to be enabled (normally disabled for release builds)
+    ENV['WMF_FORCE_ITUNES_FILE_SHARING'] = '1'
+    # force debug menu to be shown
+    ENV['WMF_FORCE_DEBUG_MENU'] = '1'
+
+    gym(
+      configuration: "Release",
+      scheme: "Wikipedia",
+      # both of these flags are required for ad hoc
+      export_method: 'ad-hoc',
+      use_legacy_build_api: true
+    )
+
+    hockey(
+      notes: git_commit_log,
+      notify: '0', # Do not notify
+      status: '2', # Make available for download
+      release_type: '0' # 'beta' release type
+    )
+  end
+
+  desc "Upload AppStore build to iTC & HockeyApp"
+  lane :store do
+    sigh(
+      adhoc: false,
+      force: true,
+      filename: 'build/release.mobileprovision'
+    )
+    ipa(
+      configuration: "Release",
+      scheme: "Wikipedia",
+      embed: 'build/release.mobileprovision',
+    )
+    hockey(
+      notes: git_commit_log,
+      notify: '0', # Do not notify
+      status: '1', # Do not make available for download
+      release_type: '1' # 'store' release type
+    )
+    deliver force: true
+  end
+
+  after_all do |lane|
+
+  end
+
+  error do |lane, exception|
+    `cat build/xcodebuild.log` if lane == "verify"
+  end
+end

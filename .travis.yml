@@ -1,0 +1,30 @@
+language: objective-c
+osx_image: xcode7.1
+env:
+  - IOS_VER="9.1" FL_ARGS="verify"
+  - IOS_VER="9.1" FL_ARGS="verify scheme:WikipediaArabic"
+# For some reason, this consistently fails in Travis: https://github.com/wikimedia/wikipedia-ios/pull/305
+    #  - IOS_VER="8.4" FL_ARGS="verify sim_os:${IOS_VER}"
+  - IOS_VER="8.4" FL_ARGS="verify sim_os:${IOS_VER} scheme:WikipediaArabic"
+
+install:
+  - make travis-get-deps
+
+before_script:
+  - SIMULATOR_ID=$(xcrun instruments -s | grep -o "iPhone 6 (${IOS_VER}) \[.*\]" | grep -o "\[.*\]" | sed "s/^\[\(.*\)\]$/\1/")
+
+script:
+  - echo $SIMULATOR_ID
+  - open -b com.apple.iphonesimulator --args -CurrentDeviceUDID $SIMULATOR_ID
+  - set -o pipefail
+  - bundle exec fastlane $FL_ARGS
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+after_failure:
+  - tail -n 500 ./build/xcodebuild.og
+
+branches:
+  only:
+    - master

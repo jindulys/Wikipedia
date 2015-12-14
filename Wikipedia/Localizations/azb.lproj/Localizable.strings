@@ -1,0 +1,137 @@
+// Messages for تۆرکجه (تۆرکجه)
+// Exported from translatewiki.net
+// Author: Arjanizary
+// Author: Ebrahimi-amir
+// Author: Koroğlu
+// Author: Mousa
+
+"languages-title" = "دیل‌لر";
+"article-languages-label" = "دیل سئچ";
+"article-languages-cancel" = "پوْز";
+"info-box-close-text" = "باغلا";
+"table-title-other" = "آرتیق بیلگیلر";
+"history-label" = "سون";
+"history-section-today" = "بوگون";
+"history-section-yesterday" = "دونن";
+"history-section-lastweek" = "گئچن هفته";
+"history-section-lastmonth" = "گئچن آی";
+"history-clear-cancel" = "پوْز";
+"history-clear-delete-all" = "هامیسین سیل";
+"zero-interstitial-continue" = "چیخ";
+"zero-interstitial-cancel" = "بوردا قال";
+"zero-learn-more-learn-more" = "آردی‌سی";
+"zero-learn-more-no-thanks" = "باغلا";
+"account-creation-logging-in" = "گیریش ائدیلیر...";
+"account-creation-saving" = "ساخلانیلیر...";
+"account-creation-login" = "اؤنجه‌دن حسابینیز وارمی؟ گیرینیز.";
+"account-creation-username-placeholder-text" = "ایشلدن آدی";
+"account-creation-password-placeholder-text" = "رمز";
+"account-creation-email-placeholder-text" = "ایمیل (ایستگه باغلی)";
+"login-user-blocked" = "ایشلدن بلوکلانیب.";
+"login-username-placeholder-text" = "ایشلدن آدی";
+"login-password-placeholder-text" = "رمز";
+"wikitext-upload-save" = "ساخلانیلیر...";
+"wikitext-upload-save-sign-in" = "گیریش";
+"wikitext-upload-save-anonymously" = "آدسیز ساخلا";
+"open-link-title" = "باغلانتی‌نی آچ";
+"open-link-cancel" = "پوْز";
+"search-searching" = "آختاریلیر...";
+"search-field-placeholder-text" = "ویکی‌پئدیادا آختار";
+"search-loading-section-zero" = "مقاله‌نین ایلک بؤلومو یوکله‌نیر...";
+"search-loading-section-remaining" = "مقاله‌نین قالانی یوکله‌نیر...";
+"search-loading-article-loaded" = "مقاله یوکلندی.";
+"search-cancel" = "پوْز";
+"search-titles" = "باشلیق‌لار";
+"search-recent-clear-cancel" = "وازگئچ";
+"search-recent-clear-delete-all" = "هامیسین سیل";
+"main-menu-title" = "آرتیق";
+"main-menu-language-title" = "ویکی‌پئدیادا 1$ آختار";
+"main-menu-language-toggle-show" = "دیللری گؤستر";
+"main-menu-language-toggle-hide" = "دیللری گیزلت";
+"main-menu-language-selection-saved" = "سئچیلمیش دیل ساخلاندی";
+"main-menu-account-title-logged-out" = "حساب";
+"main-menu-account-title-logged-in" = "$1 آدی ایله گیریش ائتدی.";
+"main-menu-account-login" = "گیریش";
+"main-menu-account-logout" = "چیخیش";
+"main-menu-show-title" = "منه گؤستر...";
+"main-menu-show-history" = "سون";
+"main-menu-show-saved" = "ساخلانیلمیش صحیفه‌لر";
+"main-menu-random" = "تصادوفی";
+"main-menu-feedback-heading" = "دؤنوت";
+"main-menu-send-feedback" = " اویغولاما دؤنوتونو گؤندر";
+"main-menu-privacy-policy" = "گیزلیلیک سیاستی";
+"main-menu-terms-of-use" = "ایشلتمک شرطلری";
+"main-menu-rate-app" = "اویغولامانی دَیرلندیر";
+"main-menu-show-today" = "بوگون";
+"main-menu-nearby" = "یاخیندا";
+"main-menu-more" = "داها...";
+"saved-pages-title" = "ذخیره اولونموش صفحه‌لر";
+"saved-pages-clear-cancel" = "پوْز";
+// Fuzzy
+"saved-pages-clear-delete-all" = "هامیسین سیل";
+// Fuzzy
+"page-history-title" = "مقاله گئچمیشی";
+// Fuzzy
+"page-history-downloading" = "مقاله گئچمیشی یوکله‌نیر...";
+"navbar-title-mode-edit-wikitext" = "دَییشدیر";
+"navbar-title-mode-login" = "گیریش";
+"navbar-title-mode-login-and-save" = "گیریش ائت و ساخلا";
+"navbar-title-mode-create-account" = "حساب یارات";
+"navbar-title-mode-create-account-and-save" = "حساب یارات و ساخلا";
+"navbar-title-mode-edit-wikitext-preview" = "اؤن‌گؤستریش";
+"navbar-title-mode-edit-wikitext-save" = "ساخلا";
+// Fuzzy
+"edit-summary-choice-linked-words" = "آرتیریلمیش باغلانتیلار";
+"edit-summary-choice-added-category" = "آرتیریلمیش بؤلمه";
+"edit-summary-choice-added-missing-info" = "آرتیریلمیش ایتگین بیلگیلر";
+"edit-summary-choice-other" = "آیری";
+"article-pull-to-refresh-is-refreshing" = "مقاله تازالانیر";
+"about-title" = "گؤره";
+"about-wikipedia" = "ویکی‌پدیا";
+"about-contributors" = "چالیشقان‌لار";
+"about-translators" = "چئویریجی‌لر";
+"share-menu-save-page" = "صفحه‌نی ذخیره ائت";
+"timestamp-just-now" = "ایندی";
+"timestamp-minutes" = "d% دقیقه قاباق";
+"timestamp-hours" = "d% ساعات قاباق";
+"timestamp-days" = "d% گون قاباق";
+"timestamp-months" = "d% آی قاباق";
+"timestamp-years" = "d% ایل قاباق";
+// Fuzzy
+"lastmodified-by-user" = "$1 $2 ایله دَییشیلیب.";
+// Fuzzy
+"lastmodified-by-anon" = "$1 آدسیز ایستیفاده‌چی ایله دَییشیلیب.";
+"button-next" = "سونراکی";
+"button-done" = "اولدو";
+"button-save" = "ساخلا";
+"onboarding-create-account" = "حساب یارات";
+"onboarding-login" = "گیریش";
+"onboarding-already-have-account" = "اؤنجه‌دن حسابینیز وارمی؟ $1";
+"onboarding-skip" = "آتلا";
+"onboarding-wikipedia" = "ویکی‌پئدیا";
+"onboarding-free-encyclopedia" = "آچیق بیلیکلیک";
+"page_protected_can_not_edit_title" = "بو صحیفه قورونور";
+"table-of-contents-heading" = "ایچینده‌کیلر";
+"menu-edit-accessibility-label" = "دَییشدیر";
+"menu-close-accessibility-label" = "باغلا";
+"menu-preview-accessibility-label" = "اؤن‌گؤستریش";
+"menu-back-accessibility-label" = "دالی";
+"menu-forward-accessibility-label" = "قاباق";
+"menu-w-accessibility-label" = "منو";
+"menu-toc-accessibility-label" = "ایچینده‌کیلر";
+"menu-search-accessibility-label" = "آختار";
+"menu-cancel-accessibility-label" = "پوْز";
+"menu-share-accessibility-label" = "پایلاش";
+"menu-more-accessibility-label" = "چوخراق تنظیم‌لر";
+"menu-trash-accessibility-label" = "سیل";
+"nearby-title" = "یاخیندا";
+"nearby-distance-label-meters" = "$1 مئتیر";
+"nearby-distance-label-km" = "$1 کیلومئتیر";
+"nearby-distance-label-feet" = "$1 آیاق";
+"nearby-distance-label-miles" = "$1 مایل";
+"nearby-pull-to-refresh-prompt" = "تازالانماغا گؤره چکین";
+"nearby-pull-to-refresh-is-refreshing" = "تازالانیر";
+"nearby-loading" = "یاخینداکی مقاله‌لر یوکله‌نیر";
+"nearby-loaded" = "یاخینداکی مقاله‌لر یوکلندی";
+"nearby-open-in-maps" = "نقشه‌لرده آچ";
+"nearby-cancel" = "پوْز";
