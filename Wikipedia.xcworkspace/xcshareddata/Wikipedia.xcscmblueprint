@@ -1,21 +1,28 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6F58B18C33AC36B5D9F9521B586BF8F1E76E5C24",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "309E0577DE33AB17B4B7A2C8BF73C5CBF5E11F70",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "6F58B18C33AC36B5D9F9521B586BF8F1E76E5C24" : 0,
-    "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : 0
+    "309E0577DE33AB17B4B7A2C8BF73C5CBF5E11F70" : 0,
+    "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : 0,
+    "6F58B18C33AC36B5D9F9521B586BF8F1E76E5C24" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FA32B647-DD72-4036-B9FF-0BB0C8E47DF8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "6F58B18C33AC36B5D9F9521B586BF8F1E76E5C24" : "wikipedia-ios",
-    "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : "wikipedia-iosvendor\/SDWebImage"
+    "309E0577DE33AB17B4B7A2C8BF73C5CBF5E11F70" : "Wikipedia\/",
+    "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : "wikipedia-iosvendor\/SDWebImage",
+    "6F58B18C33AC36B5D9F9521B586BF8F1E76E5C24" : "wikipedia-ios"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Wikipedia",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Wikipedia.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jindulys\/Wikipedia.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "309E0577DE33AB17B4B7A2C8BF73C5CBF5E11F70"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wikimedia\/wikipedia-ios.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
